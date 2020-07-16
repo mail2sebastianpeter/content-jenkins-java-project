@@ -40,6 +40,19 @@
       </manifest>
     </jar>
   </target>
+  
+  <!-- sonar details --> 
+  <property name="sonar.host.url" value="http://35.226.54.83:9000/" />
+  <target name="sonar">
+    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+        <!-- Update the following line, or put the "sonarqube-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
+        <classpath path="path/to/sonar/ant/task/lib/sonarqube-ant-task-*.jar" />
+    </taskdef>
+ 
+    <!-- Execute SonarScanner for Ant Analysis -->
+    <sonar:sonar />
+</target>
+  
 
   <target name="main" depends="compile, jar">
     <description>Main target</description>
